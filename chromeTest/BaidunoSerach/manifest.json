@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "我的时钟",
+  "name": "百度一下",
   "version": "1.0",
-  "description": "时钟扩展",
+  "description": "你点击不了百度",
   "icons": {
     "16": "image/16.png",
     "48": "image/48.png",
@@ -13,13 +13,13 @@
       "19": "image/16.png",
       "38": "image/48.png"
     },
-    "default_title": "我的时钟",
+    "default_title": "捉迷藏",
     "default_popup": "popup.html"
   },
-  "permissions": [
-  ],
-  "background":{
-    "scripts":[
-    ]
-  }
+  "content_scripts": [
+    {
+      "matches":["*://*.baidu.com/"],
+      "js":["js/cannot_touch.js"]
+    }
+  ]
 }

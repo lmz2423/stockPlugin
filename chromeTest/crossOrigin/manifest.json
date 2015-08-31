@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "鎴戠殑鏃堕挓",
+  "name": "跨域请求",
   "version": "1.0",
-  "description": "鏃堕挓鎵╁睍",
+  "description": "请求中国平安股票，每隔8秒钟",
   "icons": {
     "16": "image/16.png",
     "48": "image/48.png",
@@ -13,13 +13,11 @@
       "19": "image/16.png",
       "38": "image/48.png"
     },
-    "default_title": "鎴戠殑鏃堕挓",
+    "default_title": "我的时钟",
     "default_popup": "popup.html"
   },
   "permissions": [
-  ],
-  "background":{
-    "scripts":[
-    ]
-  }
+
+  ]
+
 }
