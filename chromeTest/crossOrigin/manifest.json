@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "跨域请求",
+  "name": "涓浗骞冲畨",
   "version": "1.0",
-  "description": "请求中国平安股票，每隔8秒钟",
+  "description": "姣忛殧6绉掕姹備腑鍥藉钩瀹夌殑鑲＄エ",
   "icons": {
     "16": "image/16.png",
     "48": "image/48.png",
@@ -13,11 +13,12 @@
       "19": "image/16.png",
       "38": "image/48.png"
     },
-    "default_title": "我的时钟",
+    "default_title": "涓浗骞冲畨",
     "default_popup": "popup.html"
   },
   "permissions": [
-
+    "*://*.baidu.com/",
+    "notifications"
   ]
 
 }
