@@ -1,1 +1,3 @@
 .idea
+src/.sass-cache
+src/config.rb
