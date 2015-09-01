@@ -18,7 +18,11 @@
   },
   "permissions": [
     "*://*.baidu.com/",
-    "notifications"
-  ]
-
+    "notifications",
+    "background"
+  ],
+  "background": {
+    "page":"background.html",
+    "persistent": true
+  }
 }

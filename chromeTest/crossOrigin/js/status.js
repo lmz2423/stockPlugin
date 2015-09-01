@@ -8,12 +8,11 @@
     var ShangHaiIndex = "sh";//���ָ�Ϻ�ָ��
     var ShenZhunIndex = "sz";//���ָ����ָ����
     var stockArray = ["sh601318"];
-    var zgpa = document.getElementById("zgpa");
     function httpRequest(url, callback, stockArray) {
         var xhr = new XMLHttpRequest();
         var stockstring = stockArray.join(",");
         var stockForm = new FormData();
-         url= url + "?" + "stockid=" + stockstring + "&" + "list=1";
+        url= url + "?" + "stockid=" + stockstring + "&" + "list=1";
         stockForm.append("stockid", stockstring);
         stockForm.append("list", "1");
         xhr.open("GET", url);
@@ -31,11 +30,9 @@
             var repsonse = JSON.parse(data);
             if(repsonse.errNum == 0){
                 var stockinfo = repsonse.retData.stockinfo;
-                zgpa.innerText = stockinfo[0].name + ":" +  stockinfo[0].currentPrice;
-                //pushNotification(stockinfo[0].currentPrice);
+                pushNotification(stockinfo[0].currentPrice);
             }
             else{
-                zgpa.innerText = "系统错误";
             }
             console.log(repsonse);
         }, stockArray);
