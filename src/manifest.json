@@ -4,25 +4,26 @@
   "version": "1.0",
   "description": "该股票插件目前版本只支持上证指数和深证成指，用户能够设置推送的时间，设置提醒提醒价格，删除和添加股票，天下熙熙皆为利来，天下攘攘皆为利往。",
   "icons": {
-    "16": "image/16.png",
-    "48": "image/48.png",
-    "128": "image/128.png"
+    "16": "images/16.png",
+    "48": "images/48.png",
+    "128": "images/128.png"
   },
   "browser_action": {
     "default_action": {
-      "19": "image/16.png",
-      "38": "image/48.png"
+      "19": "images/16.png",
+      "38": "images/48.png"
     },
     "default_title": "股价提醒助手",
-    "default_popup": "popup.html"
+    "default_popup": "html/popup.html"
   },
   "permissions": [
     "*://*.baidu.com/",
     "notifications",
     "background"
   ],
+  "options_page": "html/options.html",
   "background": {
-    "page":"background.html",
+    "page":"html/background.html",
     "persistent": true
   }
 }

@@ -1,0 +1,135 @@
+@import "_reset";
+@mixin  boxLayout {
+  margin: 0 auto;
+  width: 80%;
+}
+@mixin set{
+  a{
+
+    &:link{
+      color:#000;
+    }
+    &:visited{
+      color:#000;
+    }
+    &:hover{
+      color:#000;
+    }
+    &:active{
+      color:#000;
+    }
+  }
+}
+body{
+  background: #fdf9ec;
+}
+header {
+  background: #676766 url('../images/128.png') no-repeat 60px center;
+  background-size: 64px auto;
+  height: 80px;
+  font-size: 20px;
+
+  color: #F88A1A;
+}
+
+header {
+  position: relative;
+  h1 {
+    line-height: 80px;
+    padding-left: 160px;
+    //  text-align: center;
+    text-shadow: 1px 1px rgb(212, 158, 52), 1px 2px rgb(180, 141, 5), 1px 3px rgb(155, 140, 78);
+    font-style: italic;
+  }
+  p {
+    position: absolute;
+    right: 100px;
+    top: 30px;
+    font-size: 14px;
+  }
+  a {
+    position: absolute;
+    right: 70px;
+    top: 50px;
+    color: #F88A1A;
+    font-size: 12px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
+div.set,div.authorIntroduce{
+ @include boxLayout;
+  @include set;
+  padding-bottom: 20px;
+  h2{
+    background: #fdf9ec url(../images/set.png) no-repeat 3% center;
+    background-size: 16px auto;
+    padding-left: 5%;
+    color:#676766;
+    font-size: 24px;
+    line-height: 4;
+  }
+
+
+}
+.setBox {
+  @include boxLayout;
+  padding: 20px 6%;
+  border-top:1px solid rgb(233,233,233);
+  h3{
+    font-size: 20px;
+    line-height: 2;
+    color:#F9BE36;
+
+  }
+  p{
+    text-indent: 30px;
+    line-height: 1.6;
+  }
+  @include  set;
+
+}
+.pluginExplain{
+  color:rgb(133,133,133);
+  line-height: 1.5;
+  padding-top: 3px;
+  font-size: 15px;
+  padding-bottom: 8px;
+  strong {
+    color:darkred;
+  }
+}
+.setList{
+  color:#5db95b;
+  font-size:18px;
+  font-weight: 700;
+}
+#author{
+  border-radius: 32px;
+  float:left;
+}
+li{
+  padding-top:15px;
+}
+.choose{
+  margin-top: 12px;
+  color: rgb(91, 91, 91);
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+  input{
+    height: 30px;
+    margin-left: 30px;
+    border:1px solid #858585;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+}
+p.link{
+  color:rosybrown;
+  line-height: 40px;
+}
+

@@ -39,11 +39,29 @@
     }, 4000);
 
     function pushNotification(price) {
-        if(price>29.86){
-            var myNotification = new Notification("股价已到"+ price,{tag:"中国平安",icon:'../image/48.png'});
+        if (price > 29.86) {
+            chrome.notifications.create(
+                {
+                    type: "basic",
+                    iconUrl: "../image/happy.png",
+                    title:"中国平安",
+                    message:"股价已达到"+ price + "了，注意止损",
+                    contextMessage:"目前盈利多少",
+                    priority:2,
+                    eventTime:Date.now()
+                })
         }
-        if(price<20.76){
-            var myNotification = new Notification("股价当前价"+price,{tag:"中国平安",icon:"../image/48.png"});
+        if (price <20.76) {
+            chrome.notifications.create(
+                {
+                    type: "basic",
+                    iconUrl: "../image/sad.png",
+                    title:"中国平安",
+                    message:"股价已低到"+ price + "了，注意止损",
+                    contextMessage:"目前亏损多少",
+                    priority:2,
+                    eventTime:Date.now()
+                })
         }
     }
 }());

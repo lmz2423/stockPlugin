@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "美丽中国",
+  "version": "1.0",
+  "description": "每隔4秒请求天气预报",
+  "icons": {
+    "16": "image/16.png",
+    "48": "image/48.png",
+    "128": "image/128.png"
+  },
+  "browser_action": {
+    "default_action": {
+      "19": "image/16.png",
+      "38": "image/48.png"
+    },
+    "default_title": "天气预报",
+    "default_popup": "popup.html"
+  },
+  "options_page":"options.html",
+  "permissions": [
+    "http://api.openweathermap.org/data/2.5/forecast?q=*",
+    "notifications",
+    "background"
+  ]
+}
