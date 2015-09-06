@@ -15,7 +15,7 @@ a:focus {
   outline: none;
 }
 
-/* line 7, ../sass/popup.scss */
+/* line 9, ../sass/popup.scss */
 body {
   width: 282px;
   height: 576px;
@@ -23,7 +23,7 @@ body {
   background: #4c4e57;
 }
 
-/* line 14, ../sass/popup.scss */
+/* line 15, ../sass/popup.scss */
 header {
   position: relative;
   height: 40px;
@@ -31,7 +31,7 @@ header {
   background: url(../images/128.png) 20px center no-repeat;
   background-size: 22px 22px;
 }
-/* line 20, ../sass/popup.scss */
+/* line 21, ../sass/popup.scss */
 header h1 {
   font-size: 18px;
   font-weight: normal;
@@ -40,13 +40,13 @@ header h1 {
   line-height: 40px;
 }
 
-/* line 30, ../sass/popup.scss */
+/* line 31, ../sass/popup.scss */
 input {
   -webkit-appearance: none;
   border: 0px;
 }
 
-/* line 35, ../sass/popup.scss */
+/* line 36, ../sass/popup.scss */
 #setLink {
   position: absolute;
   top: 0px;
@@ -56,19 +56,19 @@ input {
   color: #858585;
   font-size: 15px;
 }
-/* line 43, ../sass/popup.scss */
+/* line 44, ../sass/popup.scss */
 #setLink:hover {
   color: #bcbcbc;
 }
 
-/* line 49, ../sass/popup.scss */
+/* line 50, ../sass/popup.scss */
 form {
   border-bottom: 1px solid #3d3d40;
   height: 64px;
   padding: 16px 20px;
 }
 
-/* line 55, ../sass/popup.scss */
+/* line 56, ../sass/popup.scss */
 #search {
   display: inline-block;
   padding: 0 6px;
@@ -80,7 +80,7 @@ form {
   color: #464646;
 }
 
-/* line 66, ../sass/popup.scss */
+/* line 67, ../sass/popup.scss */
 #add {
   display: inline-block;
   margin-left: 10px;
@@ -89,48 +89,54 @@ form {
   background: orange;
   font-size: 14px;
 }
-/* line 73, ../sass/popup.scss */
+/* line 74, ../sass/popup.scss */
 #add:hover {
   background: darkorange;
 }
 
-/* line 78, ../sass/popup.scss */
+/* line 79, ../sass/popup.scss */
 .stockContent {
   height: 468px;
 }
 
-/* line 83, ../sass/popup.scss */
+/* line 82, ../sass/popup.scss */
+.content {
+  display: none;
+  padding-bottom: 4px;
+}
+
+/* line 87, ../sass/popup.scss */
 .stockList:nth-child(2n) {
   background: #3e4049;
 }
 
-/* line 86, ../sass/popup.scss */
+/* line 90, ../sass/popup.scss */
 .stockList .header {
   padding: 0 16px;
   position: relative;
   height: 45px;
 }
 
-/* line 91, ../sass/popup.scss */
+/* line 95, ../sass/popup.scss */
 .stockName, .stockCode, .upOrRise, .stockPrice, .stockEdit, .delete {
   position: absolute;
 }
 
-/* line 94, ../sass/popup.scss */
+/* line 98, ../sass/popup.scss */
 .stockName {
-  top: 8px;
+  top: 5px;
   font-size: 14px;
   color: #878787;
 }
 
-/* line 99, ../sass/popup.scss */
+/* line 103, ../sass/popup.scss */
 .stockCode {
-  top: 28px;
+  top: 25px;
   font-size: 12px;
   color: #a8a8a8;
 }
 
-/* line 104, ../sass/popup.scss */
+/* line 108, ../sass/popup.scss */
 .stockPrice {
   width: 100%;
   height: 100%;
@@ -140,7 +146,7 @@ form {
   color: #a8a8a8;
 }
 
-/* line 112, ../sass/popup.scss */
+/* line 116, ../sass/popup.scss */
 .upOrRise {
   height: 100%;
   line-height: 45px;
@@ -148,3 +154,76 @@ form {
   right: 16px;
   color: #59A212;
 }
+
+/* line 124, ../sass/popup.scss */
+table {
+  margin: 0 auto;
+  width: 95%;
+  text-align: center;
+}
+/* line 128, ../sass/popup.scss */
+table th {
+  color: #787878;
+  font-weight: normal;
+  font-size: 13px;
+}
+/* line 133, ../sass/popup.scss */
+table td {
+  color: #cccccc;
+}
+/* line 136, ../sass/popup.scss */
+table tr {
+  height: 22px;
+}
+
+/* line 141, ../sass/popup.scss */
+.yestoday {
+  width: 45px;
+}
+
+/* line 144, ../sass/popup.scss */
+.chengjiaoer {
+  width: 93px;
+}
+
+/* line 147, ../sass/popup.scss */
+.todayOpen {
+  width: 45px;
+}
+
+/* line 150, ../sass/popup.scss */
+.dash {
+  border-bottom: 1px solid #383738;
+}
+
+/* line 154, ../sass/popup.scss */
+.edit p, .content p {
+  padding-left: 23px;
+  line-height: 2.2;
+  font-size: 14px;
+  color: #E45757;
+}
+/* line 160, ../sass/popup.scss */
+.edit label, .edit input, .content label, .content input {
+  display: inline-block;
+  height: 20px;
+  line-height: 22px;
+}
+/* line 166, ../sass/popup.scss */
+.edit label, .content label {
+  padding-left: 23px;
+  color: #DED9D9;
+  padding-right: 6px;
+}
+/* line 171, ../sass/popup.scss */
+.edit input, .content input {
+  padding-left: 8px;
+  width: 70px;
+}
+
+/* line 178, ../sass/popup.scss */
+.open {
+  display: block;
+}
+
+/*# sourceMappingURL=popup.css.map */

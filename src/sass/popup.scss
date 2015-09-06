@@ -1,5 +1,7 @@
 @import "_reset";
-
+$titleNameColor:rgb(135,135,135);//标题color
+$stockIndexNameColor: rgb(120,120,120);
+$stockIndexValue: #cccccc;
 @mixin border-bottom {
   border-bottom: 1px solid rgb(61, 61, 64);
 }
@@ -10,7 +12,6 @@ body {
   border-radius: 6px;
   background: #4c4e57;
 }
-
 header {
   position: relative;
   height: 40px;
@@ -78,7 +79,10 @@ form {
 .stockContent {
   height: 468px;
 }
-
+.content{
+  display: none;
+  padding-bottom: 4px;
+}
 // 股票列表
 .stockList:nth-child(2n){
   background: #3e4049;
@@ -92,12 +96,12 @@ form {
   position:absolute;
 }
 .stockName{
-  top:8px;
+  top:5px;
   font-size: 14px;
-  color:rgb(135,135,135);
+  color:$titleNameColor;
 }
 .stockCode{
-  top:28px;
+  top:25px;
   font-size:12px;
   color:rgb(168,168,168);
 }
@@ -116,4 +120,61 @@ form {
   right: 16px;
   color:#59A212;
 }
+//
+table{
+  margin: 0 auto;
+  width: 95%;
+  text-align: center;
+  th{
+    color: $stockIndexNameColor;
+    font-weight: normal;
+    font-size: 13px;
+  }
+  td{
+    color:$stockIndexValue;
+  }
+  tr{
+    height: 22px;
+  }
+}
+//table1
+.yestoday{
+  width: 45px;
+}
+.chengjiaoer{
+  width: 93px;
+}
+.todayOpen{
+  width: 45px;
+}
+.dash{
+  border-bottom: 1px solid rgb(56, 55, 56);
+}
+.edit,.content{
+  p{
+    padding-left: 23px;
+    line-height: 2.2;
+    font-size: 14px;
+    color: #E45757;
+  }
+  label,input{
 
+    display: inline-block;
+    height: 20px;
+    line-height: 22px;
+  }
+  label{
+    padding-left: 23px;
+    color:#DED9D9;
+    padding-right: 6px;
+  }
+  input{
+    padding-left: 8px;
+    width: 70px;
+  }
+}
+
+//
+.open{
+  display: block;
+}

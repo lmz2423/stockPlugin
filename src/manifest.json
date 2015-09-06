@@ -19,7 +19,8 @@
   "permissions": [
     "*://*.baidu.com/",
     "notifications",
-    "background"
+    "background",
+    "storage"
   ],
   "options_page": "html/options.html",
   "background": {
