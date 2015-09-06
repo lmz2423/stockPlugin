@@ -7,7 +7,7 @@ var utils = {};
 (function (utilsTool) {
     var regPatternForSH = /60[0-3][0-9]{3}/; //上交所
     var regPatternForSZ = /0{3}[0-9]{3}/;    /*深交所*/
-
+    var localstor
     var shangHai = 'sh';//上交所股票的前缀
     var shengZhun = 'sz';//深证股票的前缀
     var open = null;
@@ -47,12 +47,19 @@ var utils = {};
     };
     //删除股票
     utilsTool.removeStock = function(string){
+        chrome.storage.sync.set({
+            stockList:value,
+            timestamp:Date.now()},function(){
 
+        });
     };
     //添加股票
     utilsTool.addStock = function(string){
+        chrome.storage.sync.get("stockList",function(result){
 
+        });
     };
+    utilsTool
 
 
 }(utils));
