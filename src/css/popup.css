@@ -1,0 +1,150 @@
+/* line 2, ../sass/_reset.scss */
+h1, h2, h3, h4, h5, h6, p, div, table, header, article, footer, nav, body, form {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 7, ../sass/_reset.scss */
+a {
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+}
+/* line 10, ../sass/_reset.scss */
+a:focus {
+  outline: none;
+}
+
+/* line 7, ../sass/popup.scss */
+body {
+  width: 282px;
+  height: 576px;
+  border-radius: 6px;
+  background: #4c4e57;
+}
+
+/* line 14, ../sass/popup.scss */
+header {
+  position: relative;
+  height: 40px;
+  border-bottom: 1px solid #3d3d40;
+  background: url(../images/128.png) 20px center no-repeat;
+  background-size: 22px 22px;
+}
+/* line 20, ../sass/popup.scss */
+header h1 {
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  color: #F88A1A;
+  line-height: 40px;
+}
+
+/* line 30, ../sass/popup.scss */
+input {
+  -webkit-appearance: none;
+  border: 0px;
+}
+
+/* line 35, ../sass/popup.scss */
+#setLink {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  height: 40px;
+  line-height: 40px;
+  color: #858585;
+  font-size: 15px;
+}
+/* line 43, ../sass/popup.scss */
+#setLink:hover {
+  color: #bcbcbc;
+}
+
+/* line 49, ../sass/popup.scss */
+form {
+  border-bottom: 1px solid #3d3d40;
+  height: 64px;
+  padding: 16px 20px;
+}
+
+/* line 55, ../sass/popup.scss */
+#search {
+  display: inline-block;
+  padding: 0 6px;
+  border: 0;
+  height: 28px;
+  width: 160px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #464646;
+}
+
+/* line 66, ../sass/popup.scss */
+#add {
+  display: inline-block;
+  margin-left: 10px;
+  height: 28px;
+  width: 54px;
+  background: orange;
+  font-size: 14px;
+}
+/* line 73, ../sass/popup.scss */
+#add:hover {
+  background: darkorange;
+}
+
+/* line 78, ../sass/popup.scss */
+.stockContent {
+  height: 468px;
+}
+
+/* line 83, ../sass/popup.scss */
+.stockList:nth-child(2n) {
+  background: #3e4049;
+}
+
+/* line 86, ../sass/popup.scss */
+.stockList .header {
+  padding: 0 16px;
+  position: relative;
+  height: 45px;
+}
+
+/* line 91, ../sass/popup.scss */
+.stockName, .stockCode, .upOrRise, .stockPrice, .stockEdit, .delete {
+  position: absolute;
+}
+
+/* line 94, ../sass/popup.scss */
+.stockName {
+  top: 8px;
+  font-size: 14px;
+  color: #878787;
+}
+
+/* line 99, ../sass/popup.scss */
+.stockCode {
+  top: 28px;
+  font-size: 12px;
+  color: #a8a8a8;
+}
+
+/* line 104, ../sass/popup.scss */
+.stockPrice {
+  width: 100%;
+  height: 100%;
+  line-height: 45px;
+  text-align: center;
+  font-size: 14px;
+  color: #a8a8a8;
+}
+
+/* line 112, ../sass/popup.scss */
+.upOrRise {
+  height: 100%;
+  line-height: 45px;
+  font-size: 14px;
+  right: 16px;
+  color: #59A212;
+}

@@ -5,7 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="../css/popup.css"/>
 </head>
 <body>
+<header>
+    <h1>股票插件</h1>
+    <a id="setLink" href="options.html" target="_blank">设置</a>
+</header>
+<nav>
+    <form id="submit">
+        <input type="text" placeholder="请输入股票代码" id="search" maxlength="6"/>
+        <input type="submit" value="添加" id="add"/>
+    </form>
+</nav>
+<div class="stockContent">
+    <div class="stockList" data-stockid="">
+        <div class="header">
+            <p class="stockName">中国平安</p>
+
+            <p class="stockCode">601318</p>
+
+            <p class="stockPrice">29.98</p>
+
+            <p class="upOrRise">-0.60%</p>
+        </div>
+        <div class="content">
+            <table class="table1">
+                <thead>
+                <tr>
+                    <th>昨收</th>
+                    <th>今开</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="stockList" data-stockid="">
+        <div class="header">
+            <p class="stockName">中国平安</p>
+
+            <p class="stockCode">601318</p>
+
+            <p class="stockPrice">29.98</p>
+
+            <p class="upOrRise">-0.60%</p>
+        </div>
+        <div class="content"></div>
+        <div class="stockEdit"></div>
+    </div>
+    <div class="stockList" data-stockid="">
+        <div class="header">
+            <p class="stockName">三一重工</p>
+
+            <p class="stockCode">601318</p>
+
+            <p class="stockPrice">29.98</p>
+
+            <p class="upOrRise">+0.60%</p>
+
+        </div>
+        <div class="content">
+
+        </div>
+        <div class="stockEdit"></div>
+    </div>
+</div>
 </body>
 </html>
