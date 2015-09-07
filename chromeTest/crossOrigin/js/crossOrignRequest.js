@@ -4,7 +4,7 @@
 (function () {
     'use strict';
     var apikey = "0c61838ff9999db64547975a79354c69";
-    var url = "http://apis.baidu.com/apistore/stockservice/stock";
+    var url = "http://apis.baidu.com/apistore/stockservice/stock?stockid=";
     var ShangHaiIndex = "sh";//���ָ�Ϻ�ָ��
     var ShenZhunIndex = "sz";//���ָ����ָ����
     var stockArray = ["sh601318"];

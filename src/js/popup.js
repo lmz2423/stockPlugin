@@ -10,20 +10,26 @@
     var inputCode = document.getElementById('search');
 
 
-    stockContent.addEventListener("click",function (e) {
+    stockContent.addEventListener("click", function (e) {
         var target = e.target;
         if (target.className.match(/(stockName)|(stockCode)|(stockPrice)|(upOrRise)|(header)/)) {
             utils.toggle(target.parentElement);
         }
     });
-    form.addEventListener('submit',function(e){
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
         var inputValue = inputCode.value.trim();
         inputValue = utils.inputRex(inputValue);
-        if(inputValue){
-            console.log(inputValue);
+        if (inputValue) {
+            var message = {};
+            message.id = 1;
+            message.stockCode = inputValue;
+            message.stockStatus = 1;
+            chrome.runtime.sendMessage(message, function (response) {
+                alert(response);
+            });
         }
-        else{
+        else {
             alert("ok");
         }
     });
