@@ -78,7 +78,39 @@
         var length = stockinfo.length;
         if (length > 0) {
             for (var i = 0; i < length; i = i + 1) {
+                var currentPrice = stockinfo[i].currentPrice;
+                var downPrice = stockList[i].downPrice;
+                var upPrice = stockList[i].upPrice;
+                if (currentPrice) {
+                    if (downPrice > 0) {
+                        //如果没有数据
+                        if (currentPrice <= downPrice) {
+                            chrome.openNotifications.create({
+                                type: "basic",
+                                iconUrl: "../image/sad.png",
+                                title: stockinfo[i].name + '(' + stockinfo[i].code +')',
+                                message: "股价已低到" + currentPrice + "了，注意止损",
+                                priority: 2,
+                                eventTime: Date.now()
+                            });
 
+                        }
+                    }
+                    if (upPrice > 0) {
+                        if (currentPrice >= upPrice) {
+                            chrome.openNotifications.create({
+                                type: "basic",
+                                iconUrl: "../image/sad.png",
+                                title: stockinfo[i].name + '(' + stockinfo[i].code +')',
+                                message: "股价已涨到" + currentPrice + "了，注意止盈",
+                                priority: 2,
+                                eventTime: Date.now()
+                            });
+
+                        }
+                    }
+
+                }
             }
         }
     };

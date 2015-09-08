@@ -56,23 +56,23 @@
                 {
                     type: "basic",
                     iconUrl: "../image/happy.png",
-                    title:"中国平安",
-                    message:"股价已达到"+ price + "了，注意止损",
-                    contextMessage:"目前盈利多少",
-                    priority:2,
-                    eventTime:Date.now()
+                    title: "中国平安",
+                    message: "股价已达到" + price + "了，注意止损",
+                    contextMessage: "目前盈利多少",
+                    priority: 2,
+                    eventTime: Date.now()
                 })
         }
-        if (price <20.76) {
+        if (price < 20.76) {
             chrome.notifications.create(
                 {
                     type: "basic",
                     iconUrl: "../image/sad.png",
-                    title:"中国平安",
-                    message:"股价已低到"+ price + "了，注意止损",
-                    contextMessage:"目前亏损多少",
-                    priority:2,
-                    eventTime:Date.now()
+                    title: "中国平安",
+                    message: "股价已低到" + price + "了，注意止损",
+                    contextMessage: "目前亏损多少",
+                    priority: 2,
+                    eventTime: Date.now()
                 })
         }
     }
