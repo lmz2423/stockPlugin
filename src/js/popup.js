@@ -8,7 +8,9 @@
     var stockContent = document.querySelector(".stockContent");
     var form = document.getElementById('submit');
     var inputCode = document.getElementById('search');
-
+    var error ={
+        inputError:'输入信息错误'
+    };
 
     stockContent.addEventListener("click", function (e) {
         var target = e.target;
@@ -30,7 +32,7 @@
             });
         }
         else {
-            alert("ok");
+            alert(error.inputError);
         }
     });
 

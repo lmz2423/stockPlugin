@@ -5,16 +5,19 @@
 (function () {
     'use strict';
     //首先从本地储存中获取配置数据和股票数据,获取股票数据，通过消息机制来传给popup页面
-    var stockList = [];//用来临时储存股票数据
+    var stockList = [];//用来临时储存股票数据,与storage中的数据保此同步。
     var systemSet = null;//用来临时储存用户的配置数据。
     var queryStockData = null;//用来临时存储股票的请求数据。
     var baseurl = 'http://apis.baidu.com/apistore/stockservice/stock?stockid=';
     var url = "";
     var Background = {};
+    var parma = "&list=1";
+    var questime = 5000;//请求数据过慢
     /**
      * @description 初始化,启动后台程序。*/
     Background.init = function () {
         this.getStockList();
+        this.startquest();
     };
 
     Background.setdefaultColor = function () {
@@ -38,7 +41,7 @@
                     tempdata.push(stockList[i].stockIndex);
                 }
                 queryStockData = tempdata.join(',');
-                url = baseurl + queryStockData + "&lsit=1";
+                url = baseurl + queryStockData + parma;
             }
             else {
                 Background.setdefaultColor();
@@ -55,19 +58,60 @@
     };
 
     //发送桌面推送
-    Background.pushNotification = function () {
+    Background.pushNotification = function (data) {
+        var resonse = JSON.parse(data);
+        if (repsonse.errNum === 0) {
+            var stockInfo = resonse.retData.stockinfo;
+            this.showPushNotification(stockInfo);
+        }
+        else {
+
+        }
     };
 
+
+    /**
+     * @description 显示股票数据，实时显示。
+     * @param stockinfo
+     */
+    Background.showPushNotification = function (stockinfo) {
+        var length = stockinfo.length;
+        if (length > 0) {
+            for (var i = 0; i < length; i = i + 1) {
+
+            }
+        }
+    };
+    // 显示错误的信息
+    Background.showErrorNotification = function () {
+        chrome.notifications.create({
+            type: 'basic',
+            iconUrl: '../images/pusherror.png',
+            title: '系统错误',
+            message: '抱歉，系统发生错误，',
+            priority: 2,
+            eventTime: Date.now()
+        });
+    };
 
     Background.sendQuest = function () {
         utils.send({
             url: url,
-            success: null
+            success: null,
+            apikey: "0c61838ff9999db64547975a79354c69"
         });
     };
 
+
     Background.success = function (data) {
         console.log(data);
+    };
+    Background.startquest = function () {
+        setInterval(function () {
+            if (stockList.length > 0) {
+                Background.sendQuest();
+            }
+        }, questime);
     };
 
     //增加股票
@@ -86,7 +130,7 @@
             queryStockData = stockid;
         }
         stockList.push({stockIndex: stockid});
-        url = baseurl + queryStockData + "&lsit=1";
+        url = baseurl + queryStockData + parma;
         this.setStockList(callback);
     };
 
@@ -94,7 +138,7 @@
     Background.deleteStock = function (stockid, callback) {
         //删除内存中的数据，使内存中变量保持同步，没有必要每次都去获取数据。
         queryStockData = queryStockData.replace(stockid + ',', "");
-        url = baseurl + queryStockData + "&lsit=1";
+        url = baseurl + queryStockData + parma;
         //删除storage的对应的数据
         chrome.storage.sync.get('stockList', function (result) {
             if (result.stockList) {
@@ -130,6 +174,7 @@
                         break;
                     }
                 }
+                url = baseurl + queryStockData + parma;
                 //设置储存数据。
                 chrome.storage.sync.set({stockList: stockList}, function () {
                 });
@@ -178,4 +223,5 @@
         Background.handleData(message, sendResponse);
     });
     Background.init();
+
 }());
