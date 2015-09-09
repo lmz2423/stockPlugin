@@ -88,7 +88,7 @@
                             chrome.openNotifications.create({
                                 type: "basic",
                                 iconUrl: "../image/sad.png",
-                                title: stockinfo[i].name + '(' + stockinfo[i].code +')',
+                                title: stockinfo[i].name + '(' + stockinfo[i].code + ')',
                                 message: "股价已低到" + currentPrice + "了，注意止损",
                                 priority: 2,
                                 eventTime: Date.now()
@@ -101,7 +101,7 @@
                             chrome.openNotifications.create({
                                 type: "basic",
                                 iconUrl: "../image/sad.png",
-                                title: stockinfo[i].name + '(' + stockinfo[i].code +')',
+                                title: stockinfo[i].name + '(' + stockinfo[i].code + ')',
                                 message: "股价已涨到" + currentPrice + "了，注意止盈",
                                 priority: 2,
                                 eventTime: Date.now()
@@ -254,6 +254,18 @@
     chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
         Background.handleData(message, sendResponse);
     });
+    chrome.storage.onChanged.addListener(function (changes, namespace) {
+        for(var key in changes) {
+            var storageChange = changes[key];
+            console.log('Storage key "%s" in namespace "%s" changed. ' +
+                'Old value was "%s", new value is "%s".',
+                key,
+                namespace,
+                storageChange.oldValue,
+                storageChange.newValue);
+        }
+    });
+
     Background.init();
 
 }());
